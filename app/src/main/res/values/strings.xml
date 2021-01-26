@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Caffe Notice</string>
+    <integer name="butsize">70</integer>
+</resources>
