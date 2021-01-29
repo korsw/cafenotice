@@ -1,5 +1,7 @@
 package com.lsu.caffenotice;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -30,16 +32,24 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     @NonNull
     @Override
     public ViewHodler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        Context context = parent.getContext();
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View view = inflater.inflate(R.layout.activity_recyclerview_item, parent, false);
+        ViewHodler VH = new RecyclerviewAdapter.ViewHodler(view);
+
+        return VH;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHodler holder, int position) {
+        //gra text = mData.get(position);
+        //holder.logo.setImageIcon();
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return  mData.size();
     }
 }
