@@ -21,7 +21,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         ViewHodler(View itemView){
             super(itemView);
 
-            logo = itemView.findViewById(R.id.logoView);
+            //logo = itemView.findViewById(R.id.logoView);
         }
     }
 
