@@ -1,4 +1,4 @@
-package com.lsu.caffenotice;
+package com.lsu.cafenotice;
 
 import androidx.appcompat.app.AppCompatActivity;
 

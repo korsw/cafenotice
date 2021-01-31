@@ -1,4 +1,4 @@
-package com.lsu.caffenotice;
+package com.lsu.cafenotice;
 
 import android.content.Context;
 import android.view.LayoutInflater;

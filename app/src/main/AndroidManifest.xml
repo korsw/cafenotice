@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lsu.caffenotice">
+    package="com.lsu.cafenotice">
 
     <application
         android:allowBackup="true"
@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CaffeNotice">
-        <activity android:name=".Recyclerview_item"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.lsu.cafenotice.Recyclerview_item"></activity>
+        <activity android:name="com.lsu.cafenotice.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
