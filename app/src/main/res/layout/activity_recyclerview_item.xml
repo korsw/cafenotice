@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/google_pixe"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:clipToOutline="true">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <ImageView
-    android:id="@+id/cafe_icon_1"
-    android:layout_width="137dp"
-    android:layout_height="137dp"
-    android:layout_alignParentLeft="true"
-    android:layout_marginLeft="45dp"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="21dp" />
+        android:id="@+id/cafe_icon_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_weight="4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/starbucks_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/cafe_icon_2"
-        android:layout_width="137dp"
-        android:layout_height="137dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="229dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="21dp" />
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_weight="4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/atwosomeplace_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
