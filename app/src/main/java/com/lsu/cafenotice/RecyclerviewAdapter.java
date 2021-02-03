@@ -5,54 +5,72 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHodler> {
-
-    private ArrayList<String> mData = null;
-
-    public class ViewHodler extends RecyclerView.ViewHolder{
-        ImageView logo;
-
-        ViewHodler(View itemView){
-            super(itemView);
-
-            //logo = itemView.findViewById(R.id.logoView);
-        }
-    }
-
-    RecyclerviewAdapter(ArrayList<String> list){
-        mData = list;
-    }
+public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
+    ArrayList<Recyclerview_item> items = new ArrayList<Recyclerview_item>();
 
     @NonNull
     @Override
-    public ViewHodler onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        View itemView = inflater.inflate(R.layout.activity_recyclerview_item, viewGroup, false);
 
-        View view = inflater.inflate(R.layout.activity_recyclerview_item, parent, false);
-        ViewHodler VH = new RecyclerviewAdapter.ViewHodler(view);
-
-        return VH;
+        return new ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHodler holder, int position) {
-        //gra text = mData.get(position);
-        //holder.logo.setImageIcon();
-
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+        Recyclerview_item item = items.get(position);
+        viewHolder.setItem(item);
     }
 
     @Override
     public int getItemCount() {
-        return  mData.size();
+        return items.size();
     }
+
+    public void addItem(Recyclerview_item item) {
+        items.add(item);
+    }
+
+    public void setItems(ArrayList<Recyclerview_item> items) {
+        this.items = items;
+    }
+
+    public Recyclerview_item getItem(int position) {
+        return items.get(position);
+    }
+
+    public void setItem(int position, Recyclerview_item item) {
+        items.set(position, item);
+    }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+        TextView textView2;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            textView = itemView.findViewById(R.id.textView);
+            textView2 = itemView.findViewById(R.id.textView2);
+        }
+
+        public void setItem(Recyclerview_item item) {
+            textView.setText(item.getName());
+            textView2.setText(item.getMobile());
+        }
+
+    }
+
 }
+
 
 
 /*
