@@ -1,11 +1,9 @@
 package com.lsu.cafenotice;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
-    ArrayList<Recyclerview_item> items = new ArrayList<Recyclerview_item>();
+    ArrayList<Recyclerviewitem> items = new ArrayList<>();
 
     @NonNull
     @Override
@@ -21,12 +19,13 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.activity_recyclerview_item, viewGroup, false);
 
+
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Recyclerview_item item = items.get(position);
+        Recyclerviewitem item = items.get(position);
         viewHolder.setItem(item);
     }
 
@@ -35,42 +34,41 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         return items.size();
     }
 
-    public void addItem(Recyclerview_item item) {
+    public void addItem(Recyclerviewitem item) {
         items.add(item);
     }
 
-    public void setItems(ArrayList<Recyclerview_item> items) {
+    public void setItems(ArrayList<Recyclerviewitem> items) {
         this.items = items;
     }
 
-    public Recyclerview_item getItem(int position) {
+    public Recyclerviewitem getItem(int position) {
         return items.get(position);
     }
 
-    public void setItem(int position, Recyclerview_item item) {
+    public void setItem(int position, Recyclerviewitem item) {
         items.set(position, item);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
-        TextView textView2;
+        ImageView imageView1;
+        ImageView imageView2;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textView = itemView.findViewById(R.id.textView);
-            textView2 = itemView.findViewById(R.id.textView2);
+            imageView1 = itemView.findViewById(R.id.cafe_icon_1);
+            imageView2 = itemView.findViewById(R.id.cafe_icon_2);
         }
 
-        public void setItem(Recyclerview_item item) {
-            textView.setText(item.getName());
-            textView2.setText(item.getMobile());
+        public void setItem(Recyclerviewitem item) {
+            imageView1.setImageResource(item.getResId());
+            imageView2.setImageResource(item.getResId());
         }
 
     }
 
 }
-
 
 
 /*

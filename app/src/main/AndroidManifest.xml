@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CaffeNotice">
-        <activity android:name="com.lsu.cafenotice.Recyclerview_item"></activity>
+        <activity android:name="com.lsu.cafenotice.Recyclerviewitem"></activity>
         <activity android:name="com.lsu.cafenotice.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
