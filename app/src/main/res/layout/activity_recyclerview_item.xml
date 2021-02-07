@@ -9,19 +9,18 @@
     <ImageView
         android:id="@+id/cafe_icon_1"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="45dp"
-        android:layout_weight="4"
         android:scaleType="fitCenter"
-        android:src="@drawable/starbucks_logo"
+        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/cafe_icon_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -34,6 +33,6 @@
         android:src="@drawable/atwosomeplace_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

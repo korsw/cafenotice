@@ -58,12 +58,12 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             super(itemView);
 
             imageView1 = itemView.findViewById(R.id.cafe_icon_1);
-            imageView2 = itemView.findViewById(R.id.cafe_icon_2);
+            //imageView2 = itemView.findViewById(R.id.cafe_icon_2);
         }
 
         public void setItem(Recyclerviewitem item) {
             imageView1.setImageResource(item.getResId());
-            imageView2.setImageResource(item.getResId());
+            //imageView2.setImageResource(item.getResId());
         }
 
     }

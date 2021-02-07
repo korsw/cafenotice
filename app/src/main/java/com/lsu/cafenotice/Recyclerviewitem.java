@@ -17,7 +17,7 @@ public class Recyclerviewitem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_item);
 
-        DisplayMetrics metrics = new DisplayMetrics();
+        /*DisplayMetrics metrics = new DisplayMetrics();
         WindowManager windowManager = (WindowManager) getApplicationContext()
                 .getSystemService(Context.WINDOW_SERVICE);
         windowManager.getDefaultDisplay().getMetrics(metrics);
@@ -34,6 +34,8 @@ public class Recyclerviewitem extends AppCompatActivity {
 
         img1.setLayoutParams(params1);
         img2.setLayoutParams(params2);
+
+         */
     }
 
     String name;
