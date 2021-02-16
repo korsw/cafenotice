@@ -16,26 +16,6 @@ public class Recyclerviewitem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_item);
-
-        /*DisplayMetrics metrics = new DisplayMetrics();
-        WindowManager windowManager = (WindowManager) getApplicationContext()
-                .getSystemService(Context.WINDOW_SERVICE);
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-
-        ImageView img1 = (ImageView) findViewById(R.id.cafe_icon_1);
-        LayoutParams params1 = (LayoutParams) img1.getLayoutParams();
-        params1.width = metrics.widthPixels/3;
-        params1.height = metrics.widthPixels/3;
-        ImageView img2 = (ImageView) findViewById(R.id.cafe_icon_2);
-        LayoutParams params2 = (LayoutParams) img2.getLayoutParams();
-        params2.width = metrics.widthPixels/3;
-        params2.height = metrics.widthPixels/3;
-
-
-        img1.setLayoutParams(params1);
-        img2.setLayoutParams(params2);
-
-         */
     }
 
     String name;

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerviewAdapter adapter;
+    private RecyclerviewAdapter adapter = new RecyclerviewAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.logoRecyclerView);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new RecyclerviewAdapter();
         recyclerView.setAdapter(adapter);
     }
 

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
-    ArrayList<Recyclerviewitem> items = new ArrayList<>();
+    ArrayList<Recyclerviewitem> items = new ArrayList<Recyclerviewitem>();
 
     @NonNull
     @Override
@@ -52,18 +52,15 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView1;
-        ImageView imageView2;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             imageView1 = itemView.findViewById(R.id.cafe_icon_1);
-            //imageView2 = itemView.findViewById(R.id.cafe_icon_2);
         }
 
         public void setItem(Recyclerviewitem item) {
             imageView1.setImageResource(item.getResId());
-            //imageView2.setImageResource(item.getResId());
         }
 
     }
