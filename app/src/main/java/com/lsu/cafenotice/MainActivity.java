@@ -1,6 +1,7 @@
 package com.lsu.cafenotice;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,20 +28,20 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.logoRecyclerView);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.setAdapter(adapter);
     }
 
     private void getData() {
         List<Integer> listResId = Arrays.asList(
-                R.drawable.starbucks_logo,
-                R.drawable.atwosomeplace_logo,
-                R.drawable.coffeebean_logo,
-                R.drawable.tomntoms_logo,
-                R.drawable.angelinus_logo,
-                R.drawable.hollys_logo
+                R.drawable.logo_starbucks,
+                R.drawable.logo_atwosomeplace,
+                R.drawable.logo_coffeebean,
+                R.drawable.logo_tomntoms,
+                R.drawable.logo_angelinus,
+                R.drawable.logo_hollys
         );
 
         for (int i = 0; i < listResId.size(); i++) {
