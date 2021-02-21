@@ -13,6 +13,8 @@ import java.util.ArrayList;
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
     ArrayList<Recyclerviewitem> items = new ArrayList<Recyclerviewitem>();
 
+    private OnItemClickListener mListener = null ;
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
@@ -27,6 +29,15 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         Recyclerviewitem item = items.get(position);
         viewHolder.setItem(item);
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position) ;
+    }
+
+    // OnItemClickListener 리스너 객체 참조를 어댑터에 전달하는 메서드
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mListener = listener ;
     }
 
     @Override

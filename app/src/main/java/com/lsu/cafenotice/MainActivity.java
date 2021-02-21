@@ -5,14 +5,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerviewAdapter adapter = new RecyclerviewAdapter();
+    RecyclerviewAdapter adapter = new RecyclerviewAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +55,4 @@ public class MainActivity extends AppCompatActivity {
             adapter.addItem(data);
         }
     }
-
 }
