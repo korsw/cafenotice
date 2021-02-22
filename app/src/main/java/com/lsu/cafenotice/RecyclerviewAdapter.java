@@ -37,7 +37,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
             return new MyViewHolder(v);
         }
         
-        실험
+        실험 1
          */
 
         return new ViewHolder(itemView);
