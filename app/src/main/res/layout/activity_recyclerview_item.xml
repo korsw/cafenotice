@@ -8,7 +8,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/cafe_icon_1"
@@ -17,21 +18,6 @@
             android:layout_margin="30dp"
             android:scaleType="fitCenter"
             tools:ignore="MissingConstraints" />
-
-        <!--<ImageView
-            android:id="@+id/cafe_icon_2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="45dp"
-            android:layout_weight="4"
-            android:scaleType="fitCenter"
-            android:src="@drawable/atwosomeplace_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />-->
 
 
     </LinearLayout>

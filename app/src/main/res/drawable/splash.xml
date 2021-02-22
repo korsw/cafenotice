@@ -3,6 +3,7 @@
     <item>
         <bitmap
             android:src="@drawable/image_splash"
-            android:gravity="center" />
+            android:filter="true"
+            android:scaleType="fitCenter"/>
     </item>
 </layer-list>

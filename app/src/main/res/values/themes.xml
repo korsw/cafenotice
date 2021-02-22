@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.CaffeNotice" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/indian_red</item>
+        <item name="colorPrimaryVariant">@color/indian_red</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/indian_red</item>
+        <item name="colorSecondaryVariant">@color/indian_red</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
@@ -25,7 +25,9 @@
         <!-- white status bar -->
         <!-- background -->
         <item name="android:windowBackground">@drawable/splash</item>
+        <!-- Navigation Bar를 투명하게 만들기 -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
-
-    출처: https://holika.tistory.com/entry/내-맘대로-정리한-안드로이드-스플래시Splash-화면은-어떻게-만들어야-효율적으로-활용할-수-있을까 [Uing? Uing!!]
 </resources>

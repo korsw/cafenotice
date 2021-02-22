@@ -6,15 +6,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerviewAdapter adapter = new RecyclerviewAdapter();
+
+
+    public LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,4 +63,15 @@ public class MainActivity extends AppCompatActivity {
             adapter.addItem(data);
         }
     }
+
+    public int getDisplayWidth(){
+        Display display = getWindowManager().getDefaultDisplay();  // in Activity
+        /* getActivity().getWindowManager().getDefaultDisplay() */ // in Fragment
+        Point size = new Point();
+        display.getRealSize(size); // or getSize(size)
+        int width = size.x;
+
+        return width;
+    }
+
 }
