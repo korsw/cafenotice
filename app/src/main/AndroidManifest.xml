@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CaffeNotice">
         <activity android:name="com.lsu.cafenotice.Recyclerviewitem"></activity>
-        <activity android:name="com.lsu.cafenotice.MainActivity">
+        <activity android:name="com.lsu.cafenotice.MainActivity"
+            android:theme="@style/SplashTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

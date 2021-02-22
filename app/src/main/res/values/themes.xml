@@ -13,4 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!-- Splash theme. -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <!-- No Title Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- white status bar -->
+        <!-- background -->
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    출처: https://holika.tistory.com/entry/내-맘대로-정리한-안드로이드-스플래시Splash-화면은-어떻게-만들어야-효율적으로-활용할-수-있을까 [Uing? Uing!!]
 </resources>
