@@ -36,6 +36,8 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
             return new MyViewHolder(v);
         }
+        
+        실험
          */
 
         return new ViewHolder(itemView);
@@ -92,10 +94,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     }
 
-}
-
-
-/*
+    /*
 가장 큰 특징은 원본 데이터를 뷰에 직접 설정하지 않고 어댑터라는 클래스를 사용한다는 점입니다.
 
 선택할 수 있능 여러개의 아이템이 표시된느 선택 위젯은 어댑터를 통해 각각의 아이템을 화면에 디스플레이합니다.
@@ -127,3 +126,5 @@ recyclerView.setLayoutManager(layoutManager);
 
 
  */
+
+}
