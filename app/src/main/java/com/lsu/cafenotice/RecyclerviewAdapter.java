@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -81,15 +82,18 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView1;
+        TextView textView1;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             imageView1 = itemView.findViewById(R.id.cafe_icon_1);
+            textView1 = itemView.findViewById(R.id.cafe_name);
         }
 
         public void setItem(Recyclerviewitem item) {
             imageView1.setImageResource(item.getResId());
+            textView1.setText(item.getName());
         }
 
     }

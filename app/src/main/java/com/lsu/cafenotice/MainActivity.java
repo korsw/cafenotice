@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Point;
+import android.media.session.PlaybackState;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.view.View;
 import java.util.Arrays;
 import java.util.List;
 
+import com.lsu.cafenotice.action_bar;
 import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         getData();
 
+        //setActionBar();
+
     }
 
     private void init() {
@@ -45,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
+        List<String> listName = Arrays.asList(
+                "스타벅스",
+                "투썸플레이스",
+                "커피빈",
+                "탐앤탐스",
+                "엔제리너스",
+                "할리스커피"
+
+        );
+
         List<Integer> listResId = Arrays.asList(
                 R.drawable.logo_starbucks,
                 R.drawable.logo_atwosomeplace,
@@ -55,13 +69,14 @@ public class MainActivity extends AppCompatActivity {
         );
 
         for (int i = 0; i < listResId.size(); i++) {
-            // 각 List의 값들을 data 객체에 set 해줍니다.
             Recyclerviewitem data = new Recyclerviewitem();
+            data.setName(listName.get(i));
             data.setResId(listResId.get(i));
 
-            // 각 값이 들어간 data를 adapter에 추가합니다.
             adapter.addItem(data);
         }
+
+        adapter.notifyDataSetChanged();
     }
 
     public int getDisplayWidth(){
@@ -73,5 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
         return width;
     }
+
+    /*private void setActionBar(){
+        action_bar ca = new action_bar(this, getSupportActionBar());
+        ca.setActionBar();
+    }*/
 
 }

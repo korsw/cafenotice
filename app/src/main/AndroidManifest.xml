@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CaffeNotice">
-        <activity android:name="com.lsu.cafenotice.Recyclerviewitem"></activity>
-        <activity android:name="com.lsu.cafenotice.MainActivity"
-            android:theme="@style/SplashTheme"
-            android:configChanges="orientation|screenSize|keyboardHidden">
+        <activity android:name=".action_bar"></activity>
+        <activity android:name=".Recyclerviewitem" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
