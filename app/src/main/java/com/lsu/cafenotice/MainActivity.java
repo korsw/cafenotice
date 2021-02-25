@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_AppCompat);
+        setTheme(R.style.DefaultTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.logoRecyclerView);
+
+        RecyclerDecoration spaceDecoration = new RecyclerDecoration(30);
+        recyclerView.addItemDecoration(spaceDecoration);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -89,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
         return width;
     }
 
-    /*private void setActionBar(){
+    private void setActionBar(){
         action_bar ca = new action_bar(this, getSupportActionBar());
         ca.setActionBar();
-    }*/
+    }
 
 }

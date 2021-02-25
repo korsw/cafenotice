@@ -2,7 +2,7 @@ package com.lsu.cafenotice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import android.app.Activity;
 import android.media.session.PlaybackState;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ public class action_bar {
     private Activity activity;
     private ActionBar actionBar;
 
-    public action_bar(Activity activity1, ActionBar actionBar2){
-        this.activity = activity1;
-        this.actionBar = actionBar2;
+    public action_bar(Activity mactivity, ActionBar mactionBar){
+        this.activity = mactivity;
+        this.actionBar = mactionBar;
     }
 
     public void setActionBar(){

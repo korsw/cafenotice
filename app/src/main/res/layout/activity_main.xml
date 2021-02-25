@@ -12,20 +12,22 @@
 
     <!--suppress AndroidDomInspection -->
 
+    <!--
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:src="@drawable/coffee" />
+        -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/logoRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:overScrollMode="never"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:overScrollMode="never"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>
