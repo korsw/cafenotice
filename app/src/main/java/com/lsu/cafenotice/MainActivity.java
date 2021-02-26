@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setActionBar(){
         Action_bar ca = new Action_bar(this, getSupportActionBar());
-        ca.setResId(R.drawable.ic_arrow_back);
+        ca.setResId(R.drawable.ic_menu);
         ca.setActionBar();
     }
 
