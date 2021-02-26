@@ -7,7 +7,7 @@
     <!--아이템이 붙어서 안나오고 아래에 패딩이 붙어서 나오면 match_parent를 wrap_content로 바꿔야지... 정신차리자...-->
 
     <LinearLayout
-        android:layout_width="140dp"
+        android:layout_width="137dp"
         android:layout_height="200dp"
         android:background="@drawable/activity_recyclerview_item_shape"
         android:elevation="10dp"

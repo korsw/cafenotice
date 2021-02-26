@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Point;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.animation.Animation;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             Recyclerviewitem data = new Recyclerviewitem();
             data.setName(listName.get(i));
             data.setResId(listResId.get(i));
+            data.setWitdh(getDisplayWidth());
 
             adapter.addItem(data);
         }
@@ -94,13 +96,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int getDisplayWidth(){
-        Display display = getWindowManager().getDefaultDisplay();  // in Activity
-        /* getActivity().getWindowManager().getDefaultDisplay() */ // in Fragment
-        Point size = new Point();
-        display.getRealSize(size); // or getSize(size)
-        int width = size.x;
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics ();
+        display.getMetrics(outMetrics);
 
-        return width;
+        float density = getResources().getDisplayMetrics().density;
+        //float dpHeight = outMetrics.heightPixels / density;
+        float dpWidth = outMetrics.widthPixels / density;
+
+        return (int)dpWidth;
     }
 
     private void setActionBar(){

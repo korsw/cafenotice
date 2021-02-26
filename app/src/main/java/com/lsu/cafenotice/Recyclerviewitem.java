@@ -20,6 +20,7 @@ public class Recyclerviewitem extends AppCompatActivity {
 
     String name;
     private int resId;
+    private int witdh;
 
     public String getName() {
         return name;
@@ -35,5 +36,13 @@ public class Recyclerviewitem extends AppCompatActivity {
 
     public void setResId(int resId) {
         this.resId = resId;
+    }
+
+    public int getWitdh() {
+        return witdh;
+    }
+
+    public void setWitdh(int witdh) {
+        this.witdh = witdh;
     }
 }
