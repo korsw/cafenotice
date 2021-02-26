@@ -5,18 +5,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Point;
-import android.media.session.PlaybackState;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import java.util.Arrays;
 import java.util.List;
 
-import com.lsu.cafenotice.action_bar;
 import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,15 +32,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+        ImageView menu = findViewById(R.id.menu);
+
         init();
 
         getData();
-        
-        ImageView menu_icon = findViewById(R.id.menu);
-        menu_icon.setOnClickListener(new View.OnClickListener() {
+
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                menu.startAnimation(rotate);
             }
         });
 
@@ -102,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setActionBar(){
-        action_bar ca = new action_bar(this, getSupportActionBar());
+        Action_bar ca = new Action_bar(this, getSupportActionBar());
+        ca.setResId(R.drawable.ic_arrow_back);
         ca.setActionBar();
     }
 

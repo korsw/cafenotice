@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.app.ActionBar;
 import android.app.Activity;
+import android.media.Image;
 import android.media.session.PlaybackState;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,27 +13,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class action_bar {
+public class Action_bar extends AppCompatActivity{
 
     private Activity activity;
     private ActionBar actionBar;
-    Animation anim_test;
+    private int resId;
 
-    anim_test = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_test);
-
-
-    ImageView btn_test;
-
-    btn_test = findViewById(R.id.btn_test);
-
-
-
-    public action_bar(Activity mactivity, ActionBar mactionBar){
+    public Action_bar(Activity mactivity, ActionBar mactionBar){
         this.activity = mactivity;
         this.actionBar = mactionBar;
     }
 
     public void setActionBar(){
+        ImageView lefticon;
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
@@ -40,8 +33,20 @@ public class action_bar {
 
         View mCustomView = LayoutInflater.from(activity).inflate(R.layout.activity_action_bar, null);
 
+        lefticon = mCustomView.findViewById(R.id.cafe_icon_1);
+        lefticon.setImageResource(getResId());
+
         actionBar.setCustomView(mCustomView);
     }
+
+    public int getResId() {
+        return resId;
+    }
+
+    public void setResId(int resId) {
+        this.resId = resId;
+    }
+
 
 
 }

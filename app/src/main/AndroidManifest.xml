@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CaffeNotice">
-        <activity android:name=".action_bar"></activity>
+        <activity android:name=".Action_bar"></activity>
         <activity android:name=".Recyclerviewitem" />
         <activity
             android:name=".MainActivity"
