@@ -11,6 +11,7 @@ import android.media.session.PlaybackState;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         init();
 
         getData();
+        
+        ImageView menu_icon = findViewById(R.id.menu);
+        menu_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         //setActionBar();
 

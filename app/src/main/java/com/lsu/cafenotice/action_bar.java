@@ -8,11 +8,24 @@ import android.media.session.PlaybackState;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class action_bar {
 
     private Activity activity;
     private ActionBar actionBar;
+    Animation anim_test;
+
+    anim_test = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_test);
+
+
+    ImageView btn_test;
+
+    btn_test = findViewById(R.id.btn_test);
+
+
 
     public action_bar(Activity mactivity, ActionBar mactionBar){
         this.activity = mactivity;
@@ -29,4 +42,6 @@ public class action_bar {
 
         actionBar.setCustomView(mCustomView);
     }
+
+
 }
