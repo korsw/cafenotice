@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -83,6 +84,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView1;
         TextView textView1;
+        LinearLayout linearLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -94,6 +96,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         public void setItem(Recyclerviewitem item) {
             imageView1.setImageResource(item.getResId());
             textView1.setText(item.getName());
+        }
+
+        public void setMargin(Recyclerviewitem item) {
+
         }
 
     }
