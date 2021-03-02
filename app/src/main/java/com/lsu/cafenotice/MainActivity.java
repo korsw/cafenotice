@@ -82,7 +82,15 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.logo_hollys
         );
 
-        for (int i = 0; i < listResId.size(); i++)
+        for (int i = 0; i < listResId.size(); i++){
+            Recyclerviewitem data = new Recyclerviewitem();
+            data.setName(listName.get(i));
+            data.setResId(listResId.get(i));
+            data.setWitdh(getDisplayWidth());
+
+            adapter.addItem(data);
+        }
+
 
         adapter.notifyDataSetChanged();
     }
