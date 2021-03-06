@@ -2,6 +2,7 @@ package com.lsu.cafenotice;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -12,12 +13,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +51,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
-        ImageView menu = findViewById(R.id.menu);
+        //ImageView menu = findViewById(R.id.menu);
+
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        //커스터마이징 하기 위해 필요
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // 툴바 메뉴버튼 생성
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        // 메뉴 버튼 모양 설정
+        //툴바 배경색
+
 
         init();
 
         getData();
 
-        menu.setOnClickListener(new View.OnClickListener() {
+        /*menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 menu.startAnimation(rotate);
@@ -61,22 +76,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-        //setActionBar();
-        //setActionBar();
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
-                .build();
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        //NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        //NavigationUI.setupWithNavController(navigationView, navController);
+         */
     }
+
 
     private void init() {
         RecyclerView recyclerView = findViewById(R.id.logoRecyclerView);
@@ -139,5 +141,15 @@ public class MainActivity extends AppCompatActivity {
         Action_bar ca = new Action_bar(this, getSupportActionBar());
         ca.setResId(R.drawable.ic_arrow_back);
         ca.setActionBar();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home : {
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            }
+            default: return super.onOptionsItemSelected(item);
+        }
     }
 }
