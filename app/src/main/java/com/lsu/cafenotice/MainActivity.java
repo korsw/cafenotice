@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
         ImageView menu = findViewById(R.id.menu);
-        //menu.setImageResource(R.drawable.ic_arrow_back);
 
         init();
 
@@ -63,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        //setActionBar();
         //setActionBar();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -134,23 +134,10 @@ public class MainActivity extends AppCompatActivity {
 
         return (int)dpWidth;
     }
+
     private void setActionBar() {
         Action_bar ca = new Action_bar(this, getSupportActionBar());
         ca.setResId(R.drawable.ic_arrow_back);
         ca.setActionBar();
-    }
-
-    @SuppressLint("ResourceType")
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.id.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
     }
 }
