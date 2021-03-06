@@ -33,7 +33,7 @@ public class Action_bar extends AppCompatActivity{
 
         View mCustomView = LayoutInflater.from(activity).inflate(R.layout.activity_action_bar, null);
 
-        lefticon = mCustomView.findViewById(R.id.menu);
+        lefticon = mCustomView.findViewById(R.id.cafe_icon_1);
         lefticon.setImageResource(getResId());
 
         actionBar.setCustomView(mCustomView);

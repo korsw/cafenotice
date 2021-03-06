@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
         ImageView menu = findViewById(R.id.menu);
-        //menu.setImageResource(R.drawable.ic_arrow_back);
 
         init();
 
@@ -47,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 menu.startAnimation(rotate);
             }
         });
+
+        //setActionBar();
 
     }
 
@@ -104,6 +105,12 @@ public class MainActivity extends AppCompatActivity {
         float dpWidth = outMetrics.widthPixels / density;
 
         return (int)dpWidth;
+    }
+
+    private void setActionBar(){
+        Action_bar ca = new Action_bar(this, getSupportActionBar());
+        ca.setResId(R.drawable.ic_arrow_back);
+        ca.setActionBar();
     }
 
 }
