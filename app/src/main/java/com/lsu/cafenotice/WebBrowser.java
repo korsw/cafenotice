@@ -16,6 +16,7 @@ public class WebBrowser extends AppCompatActivity {
     WebView wView;      // 웹뷰
     ProgressBar pBar;   // 로딩바
     EditText urlEt;     // +추가> 주소 입력창
+    String Cafeurl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +64,9 @@ public class WebBrowser extends AppCompatActivity {
         }else{
             super.onBackPressed();  // 없으면 앱 종료
         }
+    }
+
+    public void getUrl(String url){
+        this.Cafeurl = url;
     }
 }
