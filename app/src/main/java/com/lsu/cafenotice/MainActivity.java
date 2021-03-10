@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         //커스터마이징 하기 위해 필요
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //타이틀 제목 제거
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // 툴바 메뉴버튼 생성
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
@@ -179,54 +181,6 @@ public class MainActivity extends AppCompatActivity {
         return (int)dpWidth;
     }
 
-    private void setDrawerLayout(){
-        // onCreate() 함수 안
-        // Toolbar 설정
-        LinearLayout ll_navigation_container = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.navigation_item, null);
-        ll_navigation_container.setBackground(getResources().getDrawable(R.color.indian_red)); // 네비게이션 헤더의 배경색
-        ll_navigation_container.setPadding(30, 70, 30, 50); // 패딩
-        ll_navigation_container.setOrientation(LinearLayout.VERTICAL);
-        ll_navigation_container.setGravity(Gravity.BOTTOM);
-        ll_navigation_container.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT); // 텍스트뷰, 이미지뷰에 margin을 적용하기 위함
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/nanumbarungothicbold.ttf"); // 네비게이션 헤더의 텍스트뷰에 커스텀 폰트를 적용하기 위함
-
-        ImageView iv_userpicture = new ImageView(this);
-        iv_userpicture.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
-        // 패딩과 마진 설정
-
-
-        final TextView tv_username = new TextView(this);
-        tv_username.setTextColor(getResources().getColor(R.color.white));
-        tv_username.setTextSize(17);
-        tv_username.setTypeface(typeface);
-        // 패딩과 마진 설정
-
-        final TextView tv_useremail = new TextView(this);
-        tv_useremail.setTextColor(getResources().getColor(R.color.white));
-        tv_useremail.setTextSize(14);
-        tv_useremail.setTypeface(typeface);
-        // 패딩과 마진 설정
-
-
-
-        // ll_navigation_container에 만든 요소들을 담음
-        ll_navigation_container.addView(iv_userpicture);
-        ll_navigation_container.addView(tv_username);
-        ll_navigation_container.addView(tv_useremail);
-
-        navigationView.addHeaderView(ll_navigation_container);
-
-        // 네비게이션 메뉴에서 메뉴들이 눌렸을 때의 행동들
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                menuItem.setChecked(true); drawerLayout.closeDrawers();
-                int id = menuItem.getItemId();
-                return true;
-            }
-        });
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -239,41 +193,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-// 네비게이션 헤더에서 현재 로그인중인 사용자를 보여주기 위한 코드
-        /*
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if(firebaseUser != null) {
-            String uid = firebaseUser.getUid();
-            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-            firebaseDatabase.getReference("users").child(uid).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for(DataSnapshot dataSnapshot : snapshot.getChildren())
-                        if(dataSnapshot.getKey().equals("name")) {
-                            username = dataSnapshot.getValue().toString();
-                            tv_username.setText(username + " 님");
-                        }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                }
-            });
-            tv_useremail.setText(firebaseUser.getEmail());
-        } else if(firebaseUser == null) {
-            // 로그인이 되어있지 않다면, '로그인이 필요합니다.'라는 텍스트를 보여주고,
-            // 해당 텍스트를 누르면 로그인 화면으로 이동하도록 구현
-            iv_userpicture.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_ewoman_round));
-            tv_username.setText("로그인이 필요합니다.");
-            tv_useremail.setText(" ");
-            tv_username.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent navi_to_login = new Intent(getApplicationContext(), mem_LoginActivity.class);
-                    startActivity(navi_to_login);
-                }
-            });
-        }
-
-         */

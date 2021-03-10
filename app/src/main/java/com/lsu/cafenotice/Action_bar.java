@@ -24,21 +24,6 @@ public class Action_bar extends AppCompatActivity{
         this.actionBar = mactionBar;
     }
 
-    public void setActionBar(){
-        ImageView lefticon;
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
-
-        View mCustomView = LayoutInflater.from(activity).inflate(R.layout.activity_action_bar, null);
-
-        lefticon = mCustomView.findViewById(R.id.cafe_icon_1);
-        lefticon.setImageResource(getResId());
-
-        actionBar.setCustomView(mCustomView);
-    }
-
     public int getResId() {
         return resId;
     }
