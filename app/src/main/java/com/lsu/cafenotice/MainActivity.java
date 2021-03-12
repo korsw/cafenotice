@@ -62,16 +62,12 @@ public class MainActivity extends AppCompatActivity {
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
         //ImageView menu = findViewById(R.id.menu);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
-        //커스터마이징 하기 위해 필요
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //타이틀 제목 제거
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // 툴바 메뉴버튼 생성
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
-        // 메뉴 버튼 모양 설정
-        //툴바 배경색
+        setCustomTitlebar();
+
+        init();
+
+        getData();
+
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
@@ -102,13 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        init();
-
-        getData();
-
-
-
         /*menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
          */
 
 
+    }
+
+    private void setCustomTitlebar(){
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        //커스터마이징 하기 위해 필요
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //타이틀 제목 제거
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // 툴바 메뉴버튼 생성
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        // 메뉴 버튼 모양 설정
     }
 
 
