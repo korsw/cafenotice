@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -39,6 +40,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -67,6 +69,16 @@ public class MainActivity extends AppCompatActivity {
         init();
 
         getData();
+
+        adapter.setOnItemClickListener(new RecyclerviewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                // TODO : 아이템 클릭 이벤트를 MainActivity에서 처리.
+                Intent intent = new Intent(getApplicationContext() ,WebBrowser.class);
+
+                startActivityForResult(intent, 1);
+            }
+        }) ;
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
