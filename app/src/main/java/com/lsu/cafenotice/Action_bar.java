@@ -32,6 +32,8 @@ public class Action_bar extends AppCompatActivity{
         this.resId = resId;
     }
 
+    public void setanime(){}
+
 
 
 }
